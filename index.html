@@ -5,6 +5,28 @@
 <link rel="shortcut icon" href="./favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
 <link rel="manifest" href="./favicon/site.webmanifest">
+    <style>
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #fafafa; /* Светлая база */
+    
+    /* Рисуем сетку из серых точек */
+    background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+    background-size: 40px 40px; /* Расстояние между точками */
+    
+    /* Добавляем поверх еще один слой — очень бледные вертикальные линии */
+    /* Просто чтобы было интереснее */
+}
+
+/* Вариант с тонкими линиями (как в тетради) */
+body {
+    background-color: #f8f8f8;
+    background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+</style>
     <script src="chrome-extension://lgmpcpglpngdoalbgeoldeajfclnhafa/aptosSDK.js"></script><link rel="preload" href="https://www.merajulhaque.com/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2" as="font" crossorigin="" type="font/woff2">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
