@@ -4,11 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Max Sidorov | Social Card</title>
+  
+  <!-- ФАВИКОНЫ (как на современных профессиональных сайтах) -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0d0f12" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f3f4f6" media="(prefers-color-scheme: light)">
+
+  <!-- Подключение современного шрифта Geist (используется на maxsidorov.ru) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Подключение Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Настройка Tailwind для поддержки системной темной темы по классу или медиа-запросу
+    // Настройка Tailwind для поддержки системной темной темы и кастомного шрифта
     tailwind.config = {
       darkMode: 'media',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
     }
   </script>
   <style>
@@ -28,30 +50,37 @@
 </head>
 <body class="min-h-screen w-full flex flex-col items-center justify-center bg-[#f3f4f6] dark:bg-[#0d0f12] text-[#0f1419] dark:text-[#f7f9f9] transition-colors duration-300 font-sans p-4">
 
+  <!-- КОНТЕЙНЕР КАРТОЧКИ -->
   <div class="relative w-full max-w-[440px] bg-white dark:bg-[#15181c] rounded-3xl border border-gray-200 dark:border-zinc-800 shadow-xl overflow-hidden p-6 transition-colors duration-300">
     
+    <!-- Shimmer слой (активен только во время загрузки) -->
     <div id="shimmer-overlay" class="absolute inset-0 z-10 pointer-events-none overflow-hidden rounded-3xl hidden">
       <div class="w-full h-full bg-gradient-to-r from-transparent via-gray-200/40 dark:via-zinc-700/30 to-transparent animate-shimmer"></div>
     </div>
 
-    <div id="card-banner" class="h-32 rounded-2xl bg-gradient-to-tr from-[#3b82f6] to-[#8b5cf6] transition-opacity duration-300"></div>
+    <!-- БАННЕР КАРТОЧКИ (banner.png) -->
+    <div class="h-32 rounded-2xl overflow-hidden relative bg-[#e2e8f0] dark:bg-zinc-800">
+      <img id="card-banner" src="banner.png" alt="Banner" class="w-full h-full object-cover transition-opacity duration-300">
+    </div>
 
+    <!-- АВАТАРКА (profile.png) -->
     <div class="relative -mt-12 ml-4 mb-4">
-      <div id="card-avatar" class="w-24 h-24 rounded-full border-4 border-white dark:border-[#15181c] overflow-hidden bg-[#e2e8f0] dark:bg-zinc-800 flex items-center justify-center transition-all duration-300">
-        <svg class="w-12 h-12 text-[#eab308] fill-current" viewBox="0 0 24 24">
-          <path d="M4 18h4l3-10H7L4 18zm6 0h4l3-10h-4l-3 10zm6 0h4l3-10h-4l-3 10z" />
-        </svg>
+      <div id="avatar-container" class="w-24 h-24 rounded-full border-4 border-white dark:border-[#15181c] overflow-hidden bg-[#e2e8f0] dark:bg-zinc-800 flex items-center justify-center transition-all duration-300">
+        <img id="card-avatar" src="profile.png" alt="Profile" class="w-full h-full object-cover transition-all duration-300">
       </div>
     </div>
 
+    <!-- ТЕКСТОВАЯ ИНФОРМАЦИЯ -->
     <div id="text-container" class="space-y-2 px-2">
+      <!-- Реальный контент (по умолчанию) -->
       <div id="real-text" class="space-y-2">
-        <h2 class="text-2xl font-black tracking-tight">Max Sidorov</h2>
+        <h2 class="text-2xl font-black tracking-tight">Макс Сидоров</h2>
         <p class="text-gray-500 dark:text-zinc-400 text-sm font-semibold">@maxsidorov</p>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-zinc-300">
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-zinc-300 font-medium">
           Fullstack-разработчик на JavaScript, Python и C#. Создаю веб-приложения, API и десктопные решения. Пишу чистый код, проектирую архитектуру и внедряю современные технологии.
         </p>
       </div>
+      <!-- Скелетон текста (скрыт по умолчанию) -->
       <div id="skeleton-text" class="space-y-3 py-2 animate-pulse hidden">
         <div class="h-6 w-1/3 bg-gray-200 dark:bg-zinc-700 rounded-md"></div>
         <div class="h-4 w-1/4 bg-gray-200 dark:bg-zinc-700 rounded-md"></div>
@@ -60,26 +89,32 @@
       </div>
     </div>
 
+    <!-- БЛОК ИКОНОК СОЦ. СЕТЕЙ -->
     <div class="my-6">
+      <!-- Реальные иконки -->
       <div id="real-socials" class="grid grid-cols-3 gap-3">
-        <a href="https://x.com" target="_blank" rel="noreferrer" class="flex items-center justify-center h-12 bg-gray-100 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-black dark:text-white rounded-xl transition-colors">
+        <!-- X (Twitter) -->
+        <a href="https://x.com/maxsidorov_x" target="_blank" rel="noreferrer" class="flex items-center justify-center h-12 bg-gray-100 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-black dark:text-white rounded-xl transition-colors">
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
           </svg>
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noreferrer" class="flex items-center justify-center h-12 bg-gray-100 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-black dark:text-white rounded-xl transition-colors">
+        <!-- Instagram -->
+        <a href="https://instagram.com/maxsidorov_ig" target="_blank" rel="noreferrer" class="flex items-center justify-center h-12 bg-gray-100 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-black dark:text-white rounded-xl transition-colors">
           <svg class="w-5 h-5 stroke-current fill-none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></rect>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
         </a>
-        <a href="https://github.com" target="_blank" rel="noreferrer" class="flex items-center justify-center h-12 bg-gray-100 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-black dark:text-white rounded-xl transition-colors">
+        <!-- GitHub -->
+        <a href="https://github.com/tmemk-ctrl" target="_blank" rel="noreferrer" class="flex items-center justify-center h-12 bg-gray-100 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-black dark:text-white rounded-xl transition-colors">
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
           </svg>
         </a>
       </div>
+      <!-- Скелетон иконок (скрыт по умолчанию) -->
       <div id="skeleton-socials" class="grid grid-cols-3 gap-3 hidden">
         <div class="h-12 bg-gray-200 dark:bg-zinc-800 rounded-xl animate-pulse"></div>
         <div class="h-12 bg-gray-200 dark:bg-zinc-800 rounded-xl animate-pulse"></div>
@@ -87,27 +122,34 @@
       </div>
     </div>
 
+    <!-- КНОПКА MESSAGE -->
     <div id="button-container">
+      <!-- Реальная кнопка -->
       <a id="real-btn" href="https://t.me/maxsidorov" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-2 w-full h-12 bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold rounded-xl shadow-md transform active:scale-[0.98] transition-all duration-150">
+        <!-- Минималистичная SVG иконка Telegram -->
         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.37.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
         </svg>
         Message
       </a>
+      <!-- Скелетон кнопки (скрыт по умолчанию) -->
       <div id="skeleton-btn" class="h-12 bg-gray-200 dark:bg-zinc-800 rounded-xl animate-pulse hidden"></div>
     </div>
 
   </div>
 
-  <button id="reload-btn" class="mt-6 px-6 py-2.5 bg-white hover:bg-gray-50 active:scale-95 dark:bg-[#15181c] dark:hover:bg-zinc-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-zinc-800 font-semibold rounded-xl transition-all duration-150 shadow-sm disabled:opacity-50">
+  <!-- КНОПКА ПЕРЕЗАГРУЗКИ (RELOAD) -->
+  <!-- <button id="reload-btn" class="mt-6 px-6 py-2.5 bg-white hover:bg-gray-50 active:scale-95 dark:bg-[#15181c] dark:hover:bg-zinc-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-zinc-800 font-semibold rounded-xl transition-all duration-150 shadow-sm disabled:opacity-50">
     Reload
-  </button>
+  </button> -->
 
+  <!-- ЛОГИКА АНИМАЦИИ -->
   <script>
-    const reloadBtn = document.getElementById('reload-btn');
+    // const reloadBtn = document.getElementById('reload-btn');
     const shimmerOverlay = document.getElementById('shimmer-overlay');
     const cardBanner = document.getElementById('card-banner');
     const cardAvatar = document.getElementById('card-avatar');
+    const avatarContainer = document.getElementById('avatar-container');
     
     // Элементы текста
     const realText = document.getElementById('real-text');
@@ -123,19 +165,20 @@
 
     let isLoading = false;
 
-    reloadBtn.addEventListener('click', () => {
+    function Reload() {
       if (isLoading) return;
       isLoading = true;
 
       // Делаем кнопку Reload неактивной во время загрузки
-      reloadBtn.disabled = true;
+      // reloadBtn.disabled = true;
 
       // Показываем shimmer эффект
       shimmerOverlay.classList.remove('hidden');
 
-      // Затемняем баннер и аватарку под скелетон
-      cardBanner.classList.add('opacity-20', 'dark:opacity-10');
-      cardAvatar.classList.add('opacity-30');
+      // Затемняем изображения баннера и аватарки под скелетон
+      cardBanner.classList.add('opacity-20');
+      cardAvatar.classList.add('opacity-0'); // Скрываем реальную картинку аватара
+      avatarContainer.classList.add('opacity-30');
 
       // Переключаем контент на скелетоны
       realText.classList.add('hidden');
@@ -150,14 +193,15 @@
       // Имитируем загрузку (2.5 секунды)
       setTimeout(() => {
         isLoading = false;
-        reloadBtn.disabled = false;
+        // reloadBtn.disabled = false;
 
         // Скрываем shimmer эффект
         shimmerOverlay.classList.add('hidden');
 
-        // Возвращаем яркость баннеру и аватарке
-        cardBanner.classList.remove('opacity-20', 'dark:opacity-10');
-        cardAvatar.classList.remove('opacity-30');
+        // Возвращаем яркость изображениям
+        cardBanner.classList.remove('opacity-20');
+        cardAvatar.classList.remove('opacity-0');
+        avatarContainer.classList.remove('opacity-30');
 
         // Возвращаем реальный контент на место
         realText.classList.remove('hidden');
@@ -169,7 +213,11 @@
         realBtn.classList.remove('hidden');
         skeletonBtn.classList.add('hidden');
       }, 2500);
-    });
+    }
+
+  window.onload = function() {
+   Reload();
+  };
   </script>
 </body>
 </html>
