@@ -163,15 +163,30 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
   section.py-6 .space-y-6 { row-gap: 6px !important; }
   section.py-6 .space-y-2 { row-gap: 2px !important; }
 
+  /* Иконки колонка — overflow hidden чтобы лейблы не вылезали */
+  section.py-6 > div.grid > div.flex {
+    overflow: hidden !important;
+    border-radius: 12px !important;
+    padding: 16px 8px 16px 4px !important;
+  }
+
   /* Иконки 2x2 — занимают всю колонку */
+  section.py-6 .flex.justify-center {
+    height: auto !important;
+    min-height: 140px !important;
+    width: 100% !important;
+  }
+
   section.py-6 .relative.w-full {
     max-width: 100% !important;
     width: 100% !important;
   }
 
-  section.py-6 .flex.justify-center {
-    height: auto !important;
-    min-height: 140px !important;
+  /* Чуть уменьшаем масштаб иконок, чтобы лейблы влезли */
+  section.py-6 .relative.w-full > div:first-child,
+  section.py-6 .relative.w-full .absolute.inset-0:first-child {
+    transform: scale(0.88) rotate(0.3deg) !important;
+    transform-origin: center center !important;
   }
 
   section.py-6 .absolute.inset-0.grid.grid-cols-2 {
@@ -183,14 +198,15 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
     padding: 4px !important;
   }
 
-  /* Floating labels (JS, Python и т.д.) */
+  /* Floating labels (JS, Python и т.д.) — влезают внутрь */
   section.py-6 .absolute[class*="-top-"],
   section.py-6 .absolute[class*="-bottom-"],
   section.py-6 .absolute[class*="-left-"],
   section.py-6 .absolute[class*="-right-"] {
     font-size: 8px !important;
-    padding: 1px 4px !important;
+    padding: 2px 5px !important;
     white-space: nowrap !important;
+    z-index: 10 !important;
   }
 
   /* ============================================
