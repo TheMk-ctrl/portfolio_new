@@ -55,21 +55,28 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
   /* === КОНТЕЙНЕРЫ === */
   .max-w-4xl, .max-w-5xl, .max-w-6xl { max-width: 100% !important; }
   header > div, main.max-w-4xl, .mx-auto.max-w-5xl {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   /* ============================================
-     HERO — горизонтально, компактно
+     HERO — горизонтально, пропорционально
      ============================================ */
-  section.py-6 { padding-top: 10px !important; padding-bottom: 10px !important; }
+  section.py-6 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
 
-  /* Грид: 55% текст / 45% иконки */
+  /* Внешний контейнер hero */
+  section.py-6 > div.max-w-6xl {
+    padding: 20px 16px !important;
+  }
+
+  /* Грид: 58% текст / 42% иконки */
   section.py-6 > div.grid {
     display: grid !important;
-    grid-template-columns: 55% 45% !important;
-    gap: 10px !important;
-    padding: 12px !important;
+    grid-template-columns: 58% 42% !important;
+    gap: 16px !important;
     align-items: center !important;
   }
 
@@ -78,102 +85,91 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
     grid-column: 1 !important;
     grid-row: 1 !important;
     min-width: 0 !important;
-    /* Убираем лишние отступы между блоками */
-    row-gap: 6px !important;
+    row-gap: 10px !important;
   }
 
-  /* Иконки-колонка */
+  /* Иконки колонка */
   section.py-6 > div.grid > div.flex {
     grid-column: 2 !important;
     grid-row: 1 !important;
     height: auto !important;
     align-self: center !important;
+    overflow: visible !important;
+    padding: 24px 12px !important;
   }
 
-  /* Имя */
+  /* ---- ИМЯ — крупное и жирное ---- */
   section.py-6 h1 {
-    font-size: 1.15rem !important;
+    font-size: 1.5rem !important;
     line-height: 1.2 !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
   }
 
-  /* Должность и возраст */
+  /* Должность + возраст */
   section.py-6 .text-lg,
   section.py-6 .text-xl {
     font-size: 0.82rem !important;
-    line-height: 1.2 !important;
+    line-height: 1.3 !important;
   }
 
-  /* Показываем разделитель • между должностью и возрастом */
-  section.py-6 .hidden.sm\:inline {
-    display: inline !important;
-  }
+  /* Разделитель • */
+  section.py-6 .hidden.sm\:inline { display: inline !important; }
 
-  /* Email + локация — в одну строку, мелко */
+  /* Email + локация в строку */
   section.py-6 .flex.flex-col.sm\:flex-row {
     flex-direction: row !important;
     flex-wrap: wrap !important;
-    gap: 4px 8px !important;
+    gap: 4px 10px !important;
     align-items: center !important;
   }
-
-  section.py-6 .flex.flex-col.sm\:flex-row > div {
-    gap: 3px !important;
-  }
-
   section.py-6 .flex.flex-col.sm\:flex-row svg {
-    width: 12px !important;
-    height: 12px !important;
+    width: 12px !important; height: 12px !important;
   }
-
-  /* Email — обрезаем */
   section.py-6 a[href^="mailto"] {
     font-size: 0.72rem !important;
-    max-width: 120px !important;
+    max-width: 110px !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
     display: inline-block !important;
   }
-
-  /* Локация */
   section.py-6 .flex.items-center.gap-1 > span {
     font-size: 0.72rem !important;
   }
 
-  /* СКРЫВАЕМ описание на мобильном — оно растягивает блок */
-  section.py-6 p.text-muted-foreground {
-    display: none !important;
-  }
+  /* Описание — скрываем */
+  section.py-6 p.text-muted-foreground { display: none !important; }
 
-  /* Кнопки Резюме + GitHub — в одну строку, компактно */
+  /* Кнопки в одну строку */
   section.py-6 .flex.flex-wrap {
     flex-wrap: nowrap !important;
-    gap: 5px !important;
+    gap: 6px !important;
   }
-
   section.py-6 .flex.flex-wrap button {
-    height: 28px !important;
-    padding: 0 8px !important;
-    font-size: 0.7rem !important;
+    height: 30px !important;
+    padding: 0 10px !important;
+    font-size: 0.72rem !important;
     white-space: nowrap !important;
   }
 
-  /* space-y внутри текстовой колонки */
-  section.py-6 .space-y-6 { row-gap: 6px !important; }
-  section.py-6 .space-y-2 { row-gap: 2px !important; }
+  section.py-6 .space-y-6 { row-gap: 10px !important; }
+  section.py-6 .space-y-2 { row-gap: 3px !important; }
 
-  /* Иконки колонка — overflow hidden чтобы лейблы не вылезали */
-  section.py-6 > div.grid > div.flex {
-    overflow: hidden !important;
-    border-radius: 12px !important;
-    padding: 16px 8px 16px 4px !important;
+  /* ---- ИКОНКИ: скрываем вылезающие лейблы ---- */
+  section.py-6 .absolute.-top-3,
+  section.py-6 .absolute.-bottom-3,
+  section.py-6 div[class*="absolute -top-3"],
+  section.py-6 div[class*="absolute -bottom-3"],
+  section.py-6 div[class*="absolute -top-5"],
+  section.py-6 div[class*="absolute -bottom-5"] {
+    display: none !important;
   }
 
-  /* Иконки 2x2 — занимают всю колонку */
+  /* Сам блок иконок — квадрат на всю ширину колонки */
   section.py-6 .flex.justify-center {
     height: auto !important;
-    min-height: 140px !important;
+    min-height: 150px !important;
     width: 100% !important;
   }
 
@@ -182,35 +178,18 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
     width: 100% !important;
   }
 
-  /* Чуть уменьшаем масштаб иконок, чтобы лейблы влезли */
-  section.py-6 .relative.w-full > div:first-child,
-  section.py-6 .relative.w-full .absolute.inset-0:first-child {
-    transform: scale(0.88) rotate(0.3deg) !important;
-    transform-origin: center center !important;
-  }
-
   section.py-6 .absolute.inset-0.grid.grid-cols-2 {
-    gap: 5px !important;
-    padding: 5px !important;
+    gap: 8px !important;
+    padding: 8px !important;
   }
 
   section.py-6 .bg-muted.rounded-lg {
-    padding: 4px !important;
-  }
-
-  /* Floating labels (JS, Python и т.д.) — влезают внутрь */
-  section.py-6 .absolute[class*="-top-"],
-  section.py-6 .absolute[class*="-bottom-"],
-  section.py-6 .absolute[class*="-left-"],
-  section.py-6 .absolute[class*="-right-"] {
-    font-size: 8px !important;
-    padding: 2px 5px !important;
-    white-space: nowrap !important;
-    z-index: 10 !important;
+    padding: 8px !important;
+    border-radius: 10px !important;
   }
 
   /* ============================================
-     ДИПЛОМЫ — исправление строки
+     ДИПЛОМЫ
      ============================================ */
   #education .flex.flex-col.sm\:flex-row {
     flex-direction: row !important;
@@ -218,21 +197,19 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
     flex-wrap: wrap !important;
     gap: 4px 8px !important;
   }
-
   #education .hidden.sm\:inline { display: inline !important; }
-
-  #education h3 { font-size: 0.95rem !important; line-height: 1.3 !important; }
+  #education h3 { font-size: 0.95rem !important; }
   #education p.text-muted-foreground { font-size: 0.8rem !important; }
   #education a { font-size: 0.8rem !important; white-space: nowrap !important; }
   #education .flex-shrink-0 { width: 36px !important; height: 36px !important; }
 
   /* ============================================
-     ПРОЕКТЫ — крупнее название
+     ПРОЕКТЫ
      ============================================ */
   #projects .grid.md\:grid-cols-2 { grid-template-columns: 1fr !important; }
   #projects .overflow-hidden.relative.h-\[300px\] { height: 180px !important; }
   #projects .border-b.md\:border-b-0.md\:border-r { border-right: none !important; border-bottom-width: 1px !important; }
-  #projects h3.text-xl { font-size: 1.2rem !important; font-weight: 700 !important; line-height: 1.3 !important; }
+  #projects h3.text-xl { font-size: 1.2rem !important; font-weight: 700 !important; }
 
   /* ============================================
      ОПЫТ
@@ -253,29 +230,21 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
 }
 
 /* =====================================================
-   МАЛЕНЬКИЕ ТЕЛЕФОНЫ ≤390px (iPhone SE, mini)
+   iPhone SE / маленькие ≤390px
    ===================================================== */
 @media screen and (max-width: 390px) {
   header > div, main.max-w-4xl, .mx-auto.max-w-5xl {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
-
-  section.py-6 > div.grid {
-    padding: 10px !important;
-    gap: 8px !important;
-    grid-template-columns: 54% 46% !important;
-  }
-
-  section.py-6 h1 { font-size: 1rem !important; }
-  section.py-6 .flex.justify-center { min-height: 110px !important; }
-  section.py-6 .absolute[class*="-top-"],
-  section.py-6 .absolute[class*="-bottom-"] { font-size: 7px !important; }
-  section.py-6 a[href^="mailto"] { max-width: 100px !important; }
+  section.py-6 > div.max-w-6xl { padding: 14px 12px !important; }
+  section.py-6 > div.grid { gap: 10px !important; grid-template-columns: 56% 44% !important; }
+  section.py-6 h1 { font-size: 1.25rem !important; }
+  section.py-6 .flex.justify-center { min-height: 120px !important; }
 }
 
 /* =====================================================
-   ПЛАНШЕТЫ 768–1024px
+   Планшеты 768–1024px
    ===================================================== */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .max-w-4xl, .max-w-5xl { max-width: 96% !important; }
