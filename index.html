@@ -66,12 +66,12 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
     padding: 20px 16px !important;
   }
 
-  /* Grid 58/42 */
+  /* Grid 58/42 — выравниваем по верху чтобы иконки = высоте контента */
   section.py-6 > div.grid {
     display: grid !important;
     grid-template-columns: 58% 42% !important;
     gap: 12px !important;
-    align-items: center !important;
+    align-items: stretch !important;
   }
 
   /* Текст — левая колонка */
@@ -118,39 +118,42 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
     height: 30px !important; padding: 0 10px !important;
     font-size: 0.72rem !important; white-space: nowrap !important;
   }
-  section.py-6 .space-y-6 { row-gap: 10px !important; }
-  section.py-6 .space-y-2 { row-gap: 3px !important; }
+  /* Меньше пространства между блоками в hero */
+  section.py-6 .space-y-6 { row-gap: 6px !important; }
+  section.py-6 .space-y-2 { row-gap: 2px !important; }
+  /* Убираем gap между именем и должностью */
+  section.py-6 .space-y-6 > div.space-y-2 { margin-bottom: 0 !important; }
 
   /* ---- ИКОНКИ: правая колонка ---- */
-  /* Колонка: фиксированная высота, строго обрезаем */
+  /* Правая колонка иконок */
   section.py-6 > div.grid > div.flex {
     grid-column: 2 !important;
     grid-row: 1 !important;
-    /* Убираем h-48 и делаем высоту = 100% левой колонки */
-    height: 100% !important;
-    max-height: 200px !important;
-    overflow: hidden !important;
     align-self: stretch !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    overflow: hidden !important;
+    /* Растягиваем на всю высоту левой колонки */
+    height: 100% !important;
+    padding: 0 !important;
   }
 
-  /* Отменяем h-48 принудительно */
+  /* h-48 отменяем */
   .flex.justify-center.h-48 {
     height: 100% !important;
-    max-height: 200px !important;
     width: 100% !important;
   }
 
-  /* Квадратный блок иконок — отменяем aspect-square, задаём точный размер */
+  /* Блок иконок: убираем aspect-square, высота = stretch */
   section.py-6 .relative.w-full.max-w-xs {
     width: 100% !important;
     max-width: 100% !important;
-    /* Вместо aspect-square — фиксированная высота */
     aspect-ratio: unset !important;
-    height: 180px !important;
+    /* Высота подстраивается под левую колонку */
     position: relative !important;
+    align-self: stretch !important;
+    height: 100% !important;
   }
 
   /* Лейблы — скрываем */
