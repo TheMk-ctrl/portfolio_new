@@ -36,47 +36,15 @@ body {
 /* =====================================================
    CROSS-PLATFORM: iOS Safari, Android Chrome
    ===================================================== */
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
-body {
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-a, button {
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-input, textarea {
-  -webkit-appearance: none;
-  border-radius: 6px;
-}
-
-.overflow-y-auto {
-  -webkit-overflow-scrolling: touch;
-}
-
-header.sticky {
-  position: -webkit-sticky !important;
-  position: sticky !important;
-}
+*, *::before, *::after { box-sizing: border-box; -webkit-box-sizing: border-box; }
+body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+html { -webkit-font-smoothing: antialiased; }
+input, textarea { -webkit-appearance: none; border-radius: 6px; }
+header.sticky { position: -webkit-sticky !important; position: sticky !important; }
 
 @media screen and (max-width: 767px) {
-  input, textarea, select {
-    font-size: 16px !important;
-  }
+  input, textarea, select { font-size: 16px !important; }
 }
 
 /* =====================================================
@@ -85,123 +53,149 @@ header.sticky {
 @media screen and (max-width: 767px) {
 
   /* === КОНТЕЙНЕРЫ === */
-  .max-w-4xl, .max-w-5xl, .max-w-6xl {
-    max-width: 100% !important;
-  }
-
-  header > div,
-  main.max-w-4xl,
-  .mx-auto.max-w-5xl {
+  .max-w-4xl, .max-w-5xl, .max-w-6xl { max-width: 100% !important; }
+  header > div, main.max-w-4xl, .mx-auto.max-w-5xl {
     padding-left: 14px !important;
     padding-right: 14px !important;
   }
 
   /* ============================================
-     HERO — горизонтальный, как на ПК
+     HERO — горизонтально, компактно
      ============================================ */
+  section.py-6 { padding-top: 10px !important; padding-bottom: 10px !important; }
 
-  /* Внешняя секция */
-  section.py-6 {
-    padding-top: 14px !important;
-    padding-bottom: 14px !important;
-  }
-
-  /* Hero grid: ВСЕГДА 2 колонки */
+  /* Грид: 55% текст / 45% иконки */
   section.py-6 > div.grid {
     display: grid !important;
-    grid-template-columns: 3fr 2fr !important;
-    gap: 14px !important;
-    padding: 14px !important;
+    grid-template-columns: 55% 45% !important;
+    gap: 10px !important;
+    padding: 12px !important;
     align-items: center !important;
   }
 
-  /* Текст — первая колонка */
+  /* Текстовая колонка */
   section.py-6 > div.grid > div.space-y-6 {
     grid-column: 1 !important;
     grid-row: 1 !important;
     min-width: 0 !important;
+    /* Убираем лишние отступы между блоками */
+    row-gap: 6px !important;
   }
 
-  /* Иконки — вторая колонка */
+  /* Иконки-колонка */
   section.py-6 > div.grid > div.flex {
     grid-column: 2 !important;
     grid-row: 1 !important;
     height: auto !important;
-    min-height: 150px !important;
+    align-self: center !important;
   }
 
-  /* Размер иконок */
+  /* Имя */
+  section.py-6 h1 {
+    font-size: 1.15rem !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Должность и возраст */
+  section.py-6 .text-lg,
+  section.py-6 .text-xl {
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Показываем разделитель • между должностью и возрастом */
+  section.py-6 .hidden.sm\:inline {
+    display: inline !important;
+  }
+
+  /* Email + локация — в одну строку, мелко */
+  section.py-6 .flex.flex-col.sm\:flex-row {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 4px 8px !important;
+    align-items: center !important;
+  }
+
+  section.py-6 .flex.flex-col.sm\:flex-row > div {
+    gap: 3px !important;
+  }
+
+  section.py-6 .flex.flex-col.sm\:flex-row svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  /* Email — обрезаем */
+  section.py-6 a[href^="mailto"] {
+    font-size: 0.72rem !important;
+    max-width: 120px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+
+  /* Локация */
+  section.py-6 .flex.items-center.gap-1 > span {
+    font-size: 0.72rem !important;
+  }
+
+  /* СКРЫВАЕМ описание на мобильном — оно растягивает блок */
+  section.py-6 p.text-muted-foreground {
+    display: none !important;
+  }
+
+  /* Кнопки Резюме + GitHub — в одну строку, компактно */
+  section.py-6 .flex.flex-wrap {
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+  }
+
+  section.py-6 .flex.flex-wrap button {
+    height: 28px !important;
+    padding: 0 8px !important;
+    font-size: 0.7rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* space-y внутри текстовой колонки */
+  section.py-6 .space-y-6 { row-gap: 6px !important; }
+  section.py-6 .space-y-2 { row-gap: 2px !important; }
+
+  /* Иконки 2x2 — занимают всю колонку */
   section.py-6 .relative.w-full {
     max-width: 100% !important;
     width: 100% !important;
   }
 
-  /* Иконки внутри 2x2 грида */
-  section.py-6 .grid.grid-cols-2 {
+  section.py-6 .flex.justify-center {
+    height: auto !important;
+    min-height: 140px !important;
+  }
+
+  section.py-6 .absolute.inset-0.grid.grid-cols-2 {
     gap: 5px !important;
     padding: 5px !important;
   }
 
   section.py-6 .bg-muted.rounded-lg {
-    padding: 5px !important;
+    padding: 4px !important;
   }
 
-  /* Floating labels (JS, Python, C#) */
-  section.py-6 .absolute {
-    font-size: 9px !important;
-    padding: 2px 5px !important;
+  /* Floating labels (JS, Python и т.д.) */
+  section.py-6 .absolute[class*="-top-"],
+  section.py-6 .absolute[class*="-bottom-"],
+  section.py-6 .absolute[class*="-left-"],
+  section.py-6 .absolute[class*="-right-"] {
+    font-size: 8px !important;
+    padding: 1px 4px !important;
     white-space: nowrap !important;
-  }
-
-  /* Заголовок имени */
-  section.py-6 h1 {
-    font-size: 1.3rem !important;
-    line-height: 1.25 !important;
-  }
-
-  /* Подзаголовок должность */
-  section.py-6 .text-lg,
-  section.py-6 .text-xl {
-    font-size: 0.85rem !important;
-  }
-
-  /* Email — обрезаем */
-  section.py-6 a[href^="mailto"] {
-    max-width: 140px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-    display: inline-block !important;
-    vertical-align: bottom !important;
-  }
-
-  /* Описание */
-  section.py-6 p.text-muted-foreground {
-    font-size: 0.78rem !important;
-    line-height: 1.45 !important;
-  }
-
-  /* gap между элементами внутри текста */
-  section.py-6 .space-y-6 {
-    row-gap: 8px !important;
-  }
-
-  section.py-6 .space-y-2 {
-    row-gap: 3px !important;
-  }
-
-  /* Кнопки Резюме/GitHub */
-  section.py-6 button {
-    height: 30px !important;
-    padding: 0 8px !important;
-    font-size: 11px !important;
   }
 
   /* ============================================
-     ДИПЛОМЫ И СЕРТИФИКАТЫ — исправление строки
+     ДИПЛОМЫ — исправление строки
      ============================================ */
-
-  /* Строка с датой и ссылкой — горизонтально, не переносим */
   #education .flex.flex-col.sm\:flex-row {
     flex-direction: row !important;
     align-items: center !important;
@@ -209,73 +203,24 @@ header.sticky {
     gap: 4px 8px !important;
   }
 
-  /* Дата — не переносится */
-  #education .flex.flex-col.sm\:flex-row > span:first-child {
-    white-space: nowrap !important;
-    font-size: 0.8rem !important;
-  }
+  #education .hidden.sm\:inline { display: inline !important; }
 
-  /* Показываем разделитель • на мобильном */
-  #education .hidden.sm\:inline {
-    display: inline !important;
-  }
-
-  /* Ссылка Посмотреть */
-  #education a {
-    font-size: 0.8rem !important;
-    white-space: nowrap !important;
-    text-decoration: underline !important;
-  }
-
-  /* Заголовок сертификата */
-  #education h3 {
-    font-size: 0.95rem !important;
-    line-height: 1.3 !important;
-  }
-
-  /* Описание учебного заведения */
-  #education p.text-muted-foreground {
-    font-size: 0.8rem !important;
-    line-height: 1.4 !important;
-  }
-
-  /* Иконка */
-  #education .flex-shrink-0 {
-    width: 36px !important;
-    height: 36px !important;
-    font-size: 1rem !important;
-  }
+  #education h3 { font-size: 0.95rem !important; line-height: 1.3 !important; }
+  #education p.text-muted-foreground { font-size: 0.8rem !important; }
+  #education a { font-size: 0.8rem !important; white-space: nowrap !important; }
+  #education .flex-shrink-0 { width: 36px !important; height: 36px !important; }
 
   /* ============================================
      ПРОЕКТЫ — крупнее название
      ============================================ */
-
-  #projects .grid.md\:grid-cols-2 {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Картинка проекта */
-  #projects .overflow-hidden.relative.h-\[300px\] {
-    height: 180px !important;
-  }
-
-  /* Убираем правый бордер */
-  #projects .border-b.md\:border-b-0.md\:border-r {
-    border-right: none !important;
-    border-bottom-width: 1px !important;
-  }
-
-  /* Название проекта — крупнее */
-  #projects h3.text-xl {
-    font-size: 1.2rem !important;
-    font-weight: 700 !important;
-    line-height: 1.3 !important;
-  }
+  #projects .grid.md\:grid-cols-2 { grid-template-columns: 1fr !important; }
+  #projects .overflow-hidden.relative.h-\[300px\] { height: 180px !important; }
+  #projects .border-b.md\:border-b-0.md\:border-r { border-right: none !important; border-bottom-width: 1px !important; }
+  #projects h3.text-xl { font-size: 1.2rem !important; font-weight: 700 !important; line-height: 1.3 !important; }
 
   /* ============================================
      ОПЫТ
      ============================================ */
-
   #experience .flex.flex-col.sm\:flex-row.sm\:items-center.justify-between {
     flex-direction: column !important;
     gap: 2px !important;
@@ -284,61 +229,41 @@ header.sticky {
   /* ============================================
      ОБЩЕЕ
      ============================================ */
-
   .space-y-20 { row-gap: 32px !important; }
   .py-10 { padding-top: 20px !important; padding-bottom: 20px !important; }
-  .py-20 { padding-top: 28px !important; padding-bottom: 28px !important; }
   .mb-10 { margin-bottom: 18px !important; }
   .text-3xl { font-size: 1.5rem !important; }
-
-  .w-14.h-14 {
-    width: 44px !important;
-    height: 44px !important;
-  }
+  .w-14.h-14 { width: 44px !important; height: 44px !important; }
 }
 
 /* =====================================================
-   МАЛЕНЬКИЕ ТЕЛЕФОНЫ: iPhone SE / Android mini (≤390px)
+   МАЛЕНЬКИЕ ТЕЛЕФОНЫ ≤390px (iPhone SE, mini)
    ===================================================== */
 @media screen and (max-width: 390px) {
-
-  header > div,
-  main.max-w-4xl,
-  .mx-auto.max-w-5xl {
+  header > div, main.max-w-4xl, .mx-auto.max-w-5xl {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
 
   section.py-6 > div.grid {
     padding: 10px !important;
-    gap: 10px !important;
+    gap: 8px !important;
+    grid-template-columns: 54% 46% !important;
   }
 
-  section.py-6 h1 {
-    font-size: 1.1rem !important;
-  }
-
-  section.py-6 .flex.justify-center {
-    min-height: 120px !important;
-  }
-
-  section.py-6 .absolute {
-    font-size: 8px !important;
-    padding: 1px 4px !important;
-  }
+  section.py-6 h1 { font-size: 1rem !important; }
+  section.py-6 .flex.justify-center { min-height: 110px !important; }
+  section.py-6 .absolute[class*="-top-"],
+  section.py-6 .absolute[class*="-bottom-"] { font-size: 7px !important; }
+  section.py-6 a[href^="mailto"] { max-width: 100px !important; }
 }
 
 /* =====================================================
-   ПЛАНШЕТЫ (768px – 1024px)
+   ПЛАНШЕТЫ 768–1024px
    ===================================================== */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .max-w-4xl, .max-w-5xl {
-    max-width: 96% !important;
-  }
-  header > div {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
+  .max-w-4xl, .max-w-5xl { max-width: 96% !important; }
+  header > div { padding-left: 20px !important; padding-right: 20px !important; }
 }
 </style>
 </head><body class="inter_5972bc34-module__OU16Qa__className"><link href="./index_files/css2(1)" rel="stylesheet"><div hidden="" style=""></div><script type="application/ld+json"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://maxsidorov.ru","name":"Max Sidorov Portfolio","description":"Fullstack Developer Portfolio - Python, C#, JavaScript, and Web design","author":{"@type":"Person","name":"Max Sidorov"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://maxsidorov.ru/search?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://maxsidorov.ru"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://maxsidorov.ru#projects"},{"@type":"ListItem","position":3,"name":"Skills","item":"https://maxsidorov.ru#skills"},{"@type":"ListItem","position":4,"name":"Contact","item":"https://maxsidorov.ru#contact"}]}</script><script>((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=["light","dark"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;k(d)}catch(a){}})("class","theme","system",null,["light","dark"],null,true,true)</script><!--$--><header class="sticky top-0 z-50 w-full transition-all duration-200 bg-background/80 backdrop-blur-md shadow-sm" style=""><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" style=""><div class="flex h-16 items-center justify-center" style=""><nav class="hidden md:flex items-center space-x-6"><div style="position: relative;"><a class="text-sm font-medium relative group" href="https://maxsidorov.ru/#" style=""><span class="relative" style="">Инфо<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left" style="transform: scaleX(0);"></span></span></a></div><div style="position: relative;"><a class="text-sm font-medium relative group" href="https://maxsidorov.ru/#experience" style=""><span class="relative" style="">Опыт<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left" style="transform: scaleX(0);"></span></span></a></div><div style="position: relative;"><a class="text-sm font-medium relative group" href="https://maxsidorov.ru/#education" style=""><span class="relative" style="">Образование<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left" style="transform: scaleX(0);"></span></span></a></div><div style="position: relative;"><a class="text-sm font-medium relative group" href="https://maxsidorov.ru/#skills" style=""><span class="relative" style="">Навыки<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left" style="transform: scaleX(0);"></span></span></a></div><div style="position: relative;"><a class="text-sm font-medium relative group" href="https://maxsidorov.ru/#projects" style=""><span class="relative" style="">Проекты<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left" style="transform: scaleX(0);"></span></span></a></div><div style="position: relative;"><a class="text-sm font-medium relative group" href="https://maxsidorov.ru/#contact" style=""><span class="relative" style="">Контакты<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left" style="transform: scaleX(0);"></span></span></a></div><div style="transform: none;"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10" aria-label="Toggle theme" style="background: rgb(255, 255, 255); border: 2px solid rgb(221, 221, 221); transform: scale(1); color: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 15px;" id="universal-theme-toggle"><svg style="display:inline-block;width:20px;height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></nav><div class="flex md:hidden gap-1" style=""><div tabindex="0" style=""><button id="mobile-theme-toggle" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10" aria-label="Toggle theme" style=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon h-5 w-5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button></div><div tabindex="0" style=""><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10" id="mobile-menu-btn" aria-label="Toggle menu" style=""><div style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" style=""><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></div></button></div></div></div></div>
