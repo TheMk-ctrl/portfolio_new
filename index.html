@@ -34,157 +34,161 @@ body {
 <link href="./index_files/css2" rel="stylesheet"><link rel="stylesheet" href="./index_files/28ba45b34d819812.css" data-precedence="next"><link rel="preload" as="script" fetchpriority="low" href="./index_files/dd91b78536500d54.js"><script src="./index_files/502a42d8dfff2f70.js" async=""></script><script src="./index_files/4b77dcde68464653.js" async=""></script><script src="./index_files/c2d12d2bd470c2e4.js" async=""></script><script src="./index_files/c462f7822a1dbf4e.js" async=""></script><script src="./index_files/turbopack-a140e5250ce0638a.js" async=""></script><script src="./index_files/ac3d4d596c6c698a.js" async=""></script><script src="./index_files/ff1a16fafef87110.js" async=""></script><script src="./index_files/aeb173bc55261184.js" async=""></script><script src="./index_files/55794376ff76ddd5.js" async=""></script><script src="./index_files/0fd4239fb6465deb.js" async=""></script><script src="./index_files/4d762546104c6f3a.js" async=""></script><script src="./index_files/7ae27d45d1168df4.js" async=""></script><script src="./index_files/eafa4922905647f8.js" async=""></script><script src="./index_files/e74fd731c82fe804.js" async=""></script><script src="./index_files/2d368f34416a9353.js" async=""></script><script src="./index_files/a6dad97d9634a72d.js" nomodule=""></script><script src="./index_files/script.js" defer="" data-sdkn="@vercel/analytics/next" data-sdkv="1.5.0" data-disable-auto-track="1"></script><script src="./index_files/7e5ca0db64dcbf59.js"></script><script src="./index_files/7e5ca0db64dcbf59.js" async=""></script><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>Макс Сидоров | Fullstack-разработчик | Портфолио</title><meta name="description" content="Full-stack разработчик портфолио показывающий экспертность в Python, C#, Веб, и JavaScript. Посмотрите мои проекты, опыт, и технические навыки."><link rel="author" href="https://maxsidorov.ru/"><meta name="author" content="Макс Сидоров"><meta name="keywords" content="fullstack разработчик,python разработчик,c# разработчик,веб-разработчик,javascript разработчик,портфолио,воронеж"><meta name="creator" content="Макс Сидоров"><meta name="publisher" content="Макс Сидоров"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><link rel="canonical" href="https://maxsidorov.ru/"><meta name="format-detection" content="telephone=no, address=no, email=no"><meta name="google-site-verification" content="BgDrV9voTYqHHg-xobRTihhj-uUjmh-Fj_a_VN-XM9Y"><meta property="og:title" content="Макс Сидоров | FullStack-разработчик"><meta property="og:description" content="Посмотри мое портфолио с современными веб-решениями и десктопными приложениями"><meta property="og:url" content="https://maxsidorov.ru"><meta property="og:site_name" content="Макс Сидоров Портфолио"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://www.merajulhaque.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Merajul Haque - Full Stack Developer Portfolio"><meta property="og:image:type" content="image/png"><meta property="og:type" content="profile"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@haquedot"><meta name="twitter:creator" content="@haquedot"><meta name="twitter:title" content="Макс Сидоров | FullStack-разработчик"><meta name="twitter:description" content="Посмотри мое портфолио с инновационными решениями"><meta name="twitter:image" content="https://www.merajulhaque.com/og-image.png"><meta name="next-size-adjust" content="">
 <style id="mobile-fixes">
 /* =====================================================
-   CROSS-PLATFORM: iOS Safari, Android Chrome
+   CROSS-PLATFORM BASE
    ===================================================== */
-*, *::before, *::after { box-sizing: border-box; -webkit-box-sizing: border-box; }
-body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); -webkit-text-size-adjust: 100%; }
 a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 html { -webkit-font-smoothing: antialiased; }
-input, textarea { -webkit-appearance: none; border-radius: 6px; }
+input, textarea { -webkit-appearance: none; }
 header.sticky { position: -webkit-sticky !important; position: sticky !important; }
-@media screen and (max-width: 767px) {
-  input, textarea, select { font-size: 16px !important; }
-}
+@media (max-width: 767px) { input, textarea, select { font-size: 16px !important; } }
 
 /* =====================================================
    МОБИЛЬНЫЕ СТИЛИ
    ===================================================== */
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
 
+  /* Контейнеры */
   .max-w-4xl, .max-w-5xl, .max-w-6xl { max-width: 100% !important; }
-  header > div, main.max-w-4xl, .mx-auto.max-w-5xl {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
+  header > div, .mx-auto.max-w-5xl { padding-left: 16px !important; padding-right: 16px !important; }
 
   /* ============================================
-     HERO
+     HERO GRID — ID селекторы, максимальная специфичность
      ============================================ */
-  section.py-6 { padding-top: 12px !important; padding-bottom: 12px !important; }
 
-  section.py-6 > div.max-w-6xl {
-    padding: 20px 16px !important;
-  }
-
-  /* Grid 58/42 — выравниваем по верху чтобы иконки = высоте контента */
-  section.py-6 > div.grid {
+  /* Внешний контейнер */
+  #hero-grid {
     display: grid !important;
-    grid-template-columns: 58% 42% !important;
-    gap: 12px !important;
+    grid-template-columns: 55% 45% !important;
+    gap: 10px !important;
     align-items: stretch !important;
+    padding: 16px !important;
   }
 
-  /* Текст — левая колонка */
-  section.py-6 > div.grid > div.space-y-6 {
+  /* Текстовая колонка */
+  #hero-text-col {
     grid-column: 1 !important;
     grid-row: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
     min-width: 0 !important;
   }
 
-  /* ---- ИМЯ ---- */
-  section.py-6 h1 {
-    font-size: 1.5rem !important;
+  /* Блок имя + должность — без лишнего gap */
+  #hero-name-block {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Имя */
+  #hero-name-block h1 {
+    font-size: 1.45rem !important;
     font-weight: 800 !important;
-    line-height: 1.2 !important;
+    line-height: 1.15 !important;
     letter-spacing: -0.02em !important;
   }
 
-  section.py-6 .text-lg, section.py-6 .text-xl {
-    font-size: 0.82rem !important;
-    line-height: 1.3 !important;
+  /* Должность + возраст */
+  #hero-name-block p {
+    font-size: 0.8rem !important;
+    line-height: 1.2 !important;
+    margin-top: 1px !important;
   }
 
-  section.py-6 .hidden.sm\:inline { display: inline !important; }
+  /* Показываем разделитель • */
+  #hero-name-block .hidden { display: inline !important; }
 
-  section.py-6 .flex.flex-col.sm\:flex-row {
+  /* Email + локация в строку */
+  #hero-text-col .flex.flex-col {
     flex-direction: row !important;
     flex-wrap: wrap !important;
-    gap: 4px 8px !important;
+    gap: 3px 8px !important;
     align-items: center !important;
   }
-  section.py-6 .flex.flex-col.sm\:flex-row svg { width: 12px !important; height: 12px !important; }
-  section.py-6 a[href^="mailto"] {
-    font-size: 0.72rem !important;
-    max-width: 110px !important;
+  #hero-text-col .flex.flex-col svg { width: 11px !important; height: 11px !important; }
+  #hero-text-col a[href^="mailto"] {
+    font-size: 0.7rem !important;
+    max-width: 105px !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
     display: inline-block !important;
   }
-  section.py-6 .flex.items-center.gap-1 > span { font-size: 0.72rem !important; }
-  section.py-6 p.text-muted-foreground { display: none !important; }
-  section.py-6 .flex.flex-wrap { flex-wrap: nowrap !important; gap: 6px !important; }
-  section.py-6 .flex.flex-wrap button {
-    height: 30px !important; padding: 0 10px !important;
-    font-size: 0.72rem !important; white-space: nowrap !important;
+  #hero-text-col .flex.items-center > span { font-size: 0.7rem !important; }
+
+  /* Описание скрываем */
+  #hero-text-col > p { display: none !important; }
+
+  /* Кнопки в одну строку */
+  #hero-text-col .flex.flex-wrap {
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+    margin-top: 2px !important;
   }
-  /* Меньше пространства между блоками в hero */
-  section.py-6 .space-y-6 { row-gap: 6px !important; }
-  section.py-6 .space-y-2 { row-gap: 2px !important; }
-  /* Убираем gap между именем и должностью */
-  section.py-6 .space-y-6 > div.space-y-2 { margin-bottom: 0 !important; }
+  #hero-text-col .flex.flex-wrap button {
+    height: 28px !important;
+    padding: 0 8px !important;
+    font-size: 0.68rem !important;
+    white-space: nowrap !important;
+  }
 
   /* ---- ИКОНКИ: правая колонка ---- */
-  /* Правая колонка иконок */
-  section.py-6 > div.grid > div.flex {
+  #hero-icon-col {
     grid-column: 2 !important;
     grid-row: 1 !important;
+    /* Растягиваемся ровно на высоту текстовой колонки */
     align-self: stretch !important;
+    height: auto !important;
+    /* Убираем h-48 */
+    min-height: unset !important;
     display: flex !important;
-    align-items: center !important;
+    align-items: stretch !important;
     justify-content: center !important;
     overflow: hidden !important;
-    /* Растягиваем на всю высоту левой колонки */
-    height: 100% !important;
-    padding: 0 !important;
   }
 
-  /* h-48 отменяем */
-  .flex.justify-center.h-48 {
-    height: 100% !important;
-    width: 100% !important;
-  }
-
-  /* Блок иконок: убираем aspect-square, высота = stretch */
-  section.py-6 .relative.w-full.max-w-xs {
+  /* Квадрат иконок — занимает 100% высоты колонки */
+  #hero-icon-sq {
     width: 100% !important;
     max-width: 100% !important;
+    /* Отменяем aspect-square */
     aspect-ratio: unset !important;
-    /* Высота подстраивается под левую колонку */
-    position: relative !important;
-    align-self: stretch !important;
+    padding-bottom: 0 !important;
     height: 100% !important;
+    min-height: 160px !important;
+    position: relative !important;
   }
 
-  /* Лейблы — скрываем */
-  section.py-6 div[class*="absolute -top-"],
-  section.py-6 div[class*="absolute -bottom-"],
-  section.py-6 div[class*="absolute -left-"],
-  section.py-6 div[class*="absolute -right-"] {
+  /* Лейблы JS/Python/C# — скрываем */
+  #hero-icon-sq > div:not([class*="absolute inset-0"]),
+  #hero-icon-sq > div[class*="-top-"],
+  #hero-icon-sq > div[class*="-bottom-"],
+  #hero-icon-sq > div[class*="-left-"],
+  #hero-icon-sq > div[class*="-right-"] {
     display: none !important;
   }
 
-  section.py-6 .absolute.inset-0.grid.grid-cols-2 {
-    gap: 6px !important;
-    padding: 6px !important;
+  /* Сетка 2x2 иконок */
+  #hero-icon-sq .grid.grid-cols-2 {
+    gap: 7px !important;
+    padding: 7px !important;
   }
 
-  section.py-6 .bg-muted.rounded-lg {
-    padding: 6px !important;
+  #hero-icon-sq .bg-muted {
+    padding: 8px !important;
     border-radius: 10px !important;
   }
 
   /* ============================================
-     ОСТАЛЬНЫЕ СЕКЦИИ — scale + padding ощущение
+     ОСТАЛЬНЫЕ СЕКЦИИ — scale для паддинга
      ============================================ */
-
-  /* Общий враппер секций */
-  .mx-auto.max-w-5xl > section,
-  .mx-auto.max-w-5xl > div {
-    transform: scale(0.95) !important;
+  #experience, #education, #skills, #projects, #contact {
+    transform: scale(0.94) !important;
     transform-origin: top center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
   }
 
   /* ============================================
@@ -192,9 +196,9 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
      ============================================ */
   #education .flex.flex-col.sm\:flex-row {
     flex-direction: row !important;
-    align-items: center !important;
     flex-wrap: wrap !important;
     gap: 4px 8px !important;
+    align-items: center !important;
   }
   #education .hidden.sm\:inline { display: inline !important; }
   #education h3 { font-size: 0.95rem !important; }
@@ -207,9 +211,7 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
      ============================================ */
   #projects .grid.md\:grid-cols-2 { grid-template-columns: 1fr !important; }
   #projects .overflow-hidden.relative.h-\[300px\] { height: 180px !important; }
-  #projects .border-b.md\:border-b-0.md\:border-r {
-    border-right: none !important; border-bottom-width: 1px !important;
-  }
+  #projects .border-b.md\:border-b-0.md\:border-r { border-right: none !important; border-bottom-width: 1px !important; }
   #projects h3.text-xl { font-size: 1.2rem !important; font-weight: 700 !important; }
 
   /* ============================================
@@ -219,9 +221,7 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
     flex-direction: column !important; gap: 2px !important;
   }
 
-  /* ============================================
-     ОБЩЕЕ
-     ============================================ */
+  /* ОБЩЕЕ */
   .space-y-20 { row-gap: 28px !important; }
   .py-10 { padding-top: 18px !important; padding-bottom: 18px !important; }
   .mb-10 { margin-bottom: 16px !important; }
@@ -229,23 +229,13 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
   .w-14.h-14 { width: 44px !important; height: 44px !important; }
 }
 
-/* =====================================================
-   ≤390px
-   ===================================================== */
-@media screen and (max-width: 390px) {
-  header > div, main.max-w-4xl, .mx-auto.max-w-5xl {
-    padding-left: 10px !important; padding-right: 10px !important;
-  }
-  section.py-6 > div.max-w-6xl { padding: 14px 10px !important; }
-  section.py-6 > div.grid { gap: 8px !important; grid-template-columns: 56% 44% !important; }
-  section.py-6 h1 { font-size: 1.25rem !important; }
-  section.py-6 .relative.w-full.max-w-xs { height: 150px !important; }
+@media (max-width: 390px) {
+  #hero-grid { padding: 12px !important; gap: 8px !important; grid-template-columns: 56% 44% !important; }
+  #hero-name-block h1 { font-size: 1.2rem !important; }
+  #hero-icon-sq { min-height: 130px !important; }
 }
 
-/* =====================================================
-   Планшеты 768–1024px
-   ===================================================== */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .max-w-4xl, .max-w-5xl { max-width: 96% !important; }
   header > div { padding-left: 20px !important; padding-right: 20px !important; }
 }
@@ -258,8 +248,8 @@ header.sticky { position: -webkit-sticky !important; position: sticky !important
   <a href="#skills" onclick="closeMobileMenu()" style="display:block; padding:8px 0; font-size:15px; font-weight:500; text-decoration:none; color:inherit;">Навыки</a>
   <a href="#projects" onclick="closeMobileMenu()" style="display:block; padding:8px 0; font-size:15px; font-weight:500; text-decoration:none; color:inherit;">Проекты</a>
   <a href="#contact" onclick="closeMobileMenu()" style="display:block; padding:8px 0; font-size:15px; font-weight:500; text-decoration:none; color:inherit;">Контакты</a>
-</div></header><main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><!--$--><!--/$--><div class="mx-auto max-w-5xl space-y-20 py-10" style="padding-left: max(10px, 2vw); padding-right: max(10px, 2vw);" style=""><section class="py-6 md:py-10" style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-radius: 16px; border-width: 1px; border-style: solid; border-image: initial;"><div class="grid md:grid-cols-3 gap-10 items-center max-w-6xl mx-auto" style="padding: clamp(14px, 4vw, 40px);"><div class="space-y-6 md:col-span-2" style="opacity: 1; transform: none;"><div class="space-y-2" style=""><h1 class="text-3xl sm:text-4xl font-bold tracking-tight" style="opacity: 1; transform: none;">Макс Сидоров</h1><p class="text-lg sm:text-xl text-muted-foreground" style="opacity: 1; transform: none;">Fullstack-разработчик<span class="hidden sm:inline" style="font-size: 16px;"> • </span><span style="">15 лет</span></p></div><div class="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-muted-foreground" style="opacity: 1;"><div class="flex items-center gap-1 hover:text-primary transition-colors" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><a href="mailto:maxsidorov06072011@gmail.com" style="">maxsidorov06072011@gmail.com</a></div><div class="flex items-center gap-1" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-4 w-4"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span style="">Воронеж, Россия</span></div></div><p class="text-muted-foreground text-sm sm:text-base" style="opacity: 1;">Fullstack-разработчик на JavaScript, Python и C#. Создаю веб-приложения, API и десктопные решения. Пишу чистый код, проектирую архитектуру и внедряю современные технологии.</p><div class="flex flex-wrap gap-2 sm:gap-3" style="opacity: 1;"><div style="opacity: 1; transform: none;"><a target="_blank" download="" href="https://maxsidorov.ru/MaxSidorov.pdf" style=""><div tabindex="0" style="transform: none;"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 text-xs sm:text-sm" style=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download mr-2 h-3 w-3 sm:h-4 sm:w-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>Резюме</button></div></a></div><div style="opacity: 1; transform: none;"><a target="_blank" href="https://github.com/themk-ctrl" style=""><div tabindex="0" style="transform: none;"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm" style=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github h-3 w-3 sm:h-4 sm:w-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></button></div></a></div><div style="opacity: 1; transform: none;"><a target="_blank" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=maxsidorov06072011@gmail.com" style=""><div tabindex="0" style="transform: none;"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm" style=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-3 w-3 sm:h-4 sm:w-4"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></button></div></a></div><div style="opacity: 1; transform: none;"><a target="_blank" href="https://t.me/maxsidorov" style=""><div tabindex="0" style="transform: scale(1.00557);"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm" style=""><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style=""><g id="SVGRepo_bgCarrier" stroke-width="0" style=""></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" style=""></g><g id="SVGRepo_iconCarrier" style=""> <path d="M41.4193 7.30899C41.4193 7.30899 45.3046 5.79399 44.9808 9.47328C44.8729 10.9883 43.9016 16.2908 43.1461 22.0262L40.5559 39.0159C40.5559 39.0159 40.3401 41.5048 38.3974 41.9377C36.4547 42.3705 33.5408 40.4227 33.0011 39.9898C32.5694 39.6652 24.9068 34.7955 22.2086 32.4148C21.4531 31.7655 20.5897 30.4669 22.3165 28.9519L33.6487 18.1305C34.9438 16.8319 36.2389 13.8019 30.8426 17.4812L15.7331 27.7616C15.7331 27.7616 14.0063 28.8437 10.7686 27.8698L3.75342 25.7055C3.75342 25.7055 1.16321 24.0823 5.58815 22.459C16.3807 17.3729 29.6555 12.1786 41.4193 7.30899Z" fill="#000000" style=""></path> </g></svg>
-</button></div></a></div></div></div><div class="flex justify-center h-48 md:h-auto" style="opacity: 1; transform: none;"><div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square" style=""><div class="absolute inset-0 rounded-lg" style="transform: scale(1.00125) rotate(0.311827deg);"></div><div class="absolute inset-0 grid grid-cols-2 gap-2 sm:gap-4 p-2 sm:p-4" style=""><div class="bg-muted rounded-lg p-2 sm:p-4 flex items-center justify-center hover:bg-muted/80 transition-colors" tabindex="0" style="transform: none;"><div class="text-4xl text-[#087ea4]" style=""><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" fill="#000000" stroke="currentColor" height="1em" width="1em"><path d="M0 0h256v256H0V0z" fill="#F7DF1E"></path><path d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.087-21.996M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257 0-18.044 13.747-31.792 35.228-31.792 15.294 0 26.292 5.328 34.196 19.247L210.29 147.43c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.819-24.574"></path></svg></div></div><div class="bg-muted rounded-lg p-2 sm:p-4 flex items-center justify-center hover:bg-muted/80 transition-colors" style="transform: translateY(-0.101595px);"><div class="text-4xl" style=""><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" style="transform: scale(1.2);"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0164 2C10.8193 2 9.03825 3.72453 9.03825 5.85185V8.51852H15.9235V9.25926H5.97814C3.78107 9.25926 2 10.9838 2 13.1111L2 18.8889C2 21.0162 3.78107 22.7407 5.97814 22.7407H8.27322V19.4815C8.27322 17.3542 10.0543 15.6296 12.2514 15.6296H19.5956C21.4547 15.6296 22.9617 14.1704 22.9617 12.3704V5.85185C22.9617 3.72453 21.1807 2 18.9836 2H13.0164ZM12.0984 6.74074C12.8589 6.74074 13.4754 6.14378 13.4754 5.40741C13.4754 4.67103 12.8589 4.07407 12.0984 4.07407C11.3378 4.07407 10.7213 4.67103 10.7213 5.40741C10.7213 6.14378 11.3378 6.74074 12.0984 6.74074Z" fill="url(#paint0_linear_87_8204)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.9834 30C21.1805 30 22.9616 28.2755 22.9616 26.1482V23.4815L16.0763 23.4815L16.0763 22.7408L26.0217 22.7408C28.2188 22.7408 29.9998 21.0162 29.9998 18.8889V13.1111C29.9998 10.9838 28.2188 9.25928 26.0217 9.25928L23.7266 9.25928V12.5185C23.7266 14.6459 21.9455 16.3704 19.7485 16.3704L12.4042 16.3704C10.5451 16.3704 9.03809 17.8296 9.03809 19.6296L9.03809 26.1482C9.03809 28.2755 10.8192 30 13.0162 30H18.9834ZM19.9015 25.2593C19.1409 25.2593 18.5244 25.8562 18.5244 26.5926C18.5244 27.329 19.1409 27.9259 19.9015 27.9259C20.662 27.9259 21.2785 27.329 21.2785 26.5926C21.2785 25.8562 20.662 25.2593 19.9015 25.2593Z" fill="url(#paint1_linear_87_8204)"></path> <defs> <lineargradient id="paint0_linear_87_8204" x1="12.4809" y1="2" x2="12.4809" y2="22.7407" gradientUnits="userSpaceOnUse"> <stop stop-color="#327EBD"></stop> <stop offset="1" stop-color="#1565A7"></stop> </lineargradient> <lineargradient id="paint1_linear_87_8204" x1="19.519" y1="9.25928" x2="19.519" y2="30" gradientUnits="userSpaceOnUse"> <stop stop-color="#FFDA4B"></stop> <stop offset="1" stop-color="#F9C600"></stop> </lineargradient> </defs> </g></svg></div></div><div class="bg-muted rounded-lg p-2 sm:p-4 flex items-center justify-center hover:bg-muted/80 transition-colors" tabindex="0" style="transform: none;"><div class="text-4xl text-green-600" style="transform: translateY(-1.31206px);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"></path></svg></div></div><div class="bg-muted rounded-lg p-2 sm:p-4 flex items-center justify-center hover:bg-muted/80 transition-colors" tabindex="0" style="transform: scale(1.00011);"><div class="text-4xl text-sky-500" style=""><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" style="transform: scale(1.5);"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M27.6947 22.9999C27.883 22.6617 28 22.2807 28 21.9385V10.0613C28 9.71913 27.8831 9.33818 27.6947 9L16 16L27.6947 22.9999Z" fill="#7F3A86"></path> <path d="M17.0395 29.7433L26.9611 23.8047C27.2469 23.6336 27.5067 23.3382 27.695 23L16.0003 16L4.30566 23C4.49398 23.3382 4.75382 23.6337 5.03955 23.8047L14.9611 29.7433C15.5326 30.0855 16.468 30.0855 17.0395 29.7433Z" fill="#662579"></path> <path d="M27.6947 8.99996C27.5064 8.6617 27.2465 8.36629 26.9608 8.19521L17.0392 2.25662C16.4677 1.91446 15.5323 1.91446 14.9608 2.25662L5.03922 8.19521C4.46761 8.53729 4 9.37709 4 10.0613V21.9386C4 22.2807 4.11694 22.6618 4.30533 23L16 16L27.6947 8.99996Z" fill="#9A5196"></path> <path d="M16.0385 24C11.6061 24 8 20.4112 8 16C8 11.5888 11.6061 8 16.0385 8C18.8458 8 21.4674 9.47569 22.919 11.8618L19.4765 13.9265C18.7492 12.736 17.4399 12 16.0385 12C13.8222 12 12.0193 13.7944 12.0193 16C12.0193 18.2056 13.8222 20 16.0385 20C17.4362 20 18.7421 19.2681 19.4707 18.0832L22.9205 20.1359C21.4692 22.5234 18.8467 24 16.0385 24Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0001 13V13.9974H22.9999V13H22.0001V13.9974H21V15H22.0001V16.9948H21V18H22.0001V19H22.9999L23 18H25.0001V19H25.9999V18H27V17H25.9999V15H27V13.9974H25.9999V13H25.0001ZM25.0001 17V15H22.9999V16.9948L25.0001 17Z" fill="white"></path> </g></svg>
+</div></header><main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><!--$--><!--/$--><div class="mx-auto max-w-5xl space-y-20 py-10" style="padding-left: max(10px, 2vw); padding-right: max(10px, 2vw);" style=""><section class="py-6 md:py-10" style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-radius: 16px; border-width: 1px; border-style: solid; border-image: initial;"><div class="grid md:grid-cols-3 gap-10 items-center max-w-6xl mx-auto" id="hero-grid" style="padding: clamp(14px, 4vw, 40px);"><div class="space-y-6 md:col-span-2" id="hero-text-col" style="opacity: 1; transform: none;"><div class="space-y-2" id="hero-name-block" style=""><h1 class="text-3xl sm:text-4xl font-bold tracking-tight" style="opacity: 1; transform: none;">Макс Сидоров</h1><p class="text-lg sm:text-xl text-muted-foreground" style="opacity: 1; transform: none;">Fullstack-разработчик<span class="hidden sm:inline" style="font-size: 16px;"> • </span><span style="">15 лет</span></p></div><div class="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-muted-foreground" style="opacity: 1;"><div class="flex items-center gap-1 hover:text-primary transition-colors" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><a href="mailto:maxsidorov06072011@gmail.com" style="">maxsidorov06072011@gmail.com</a></div><div class="flex items-center gap-1" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-4 w-4"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span style="">Воронеж, Россия</span></div></div><p class="text-muted-foreground text-sm sm:text-base" style="opacity: 1;">Fullstack-разработчик на JavaScript, Python и C#. Создаю веб-приложения, API и десктопные решения. Пишу чистый код, проектирую архитектуру и внедряю современные технологии.</p><div class="flex flex-wrap gap-2 sm:gap-3" style="opacity: 1;"><div style="opacity: 1; transform: none;"><a target="_blank" download="" href="https://maxsidorov.ru/MaxSidorov.pdf" style=""><div tabindex="0" style="transform: none;"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 text-xs sm:text-sm" style=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download mr-2 h-3 w-3 sm:h-4 sm:w-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>Резюме</button></div></a></div><div style="opacity: 1; transform: none;"><a target="_blank" href="https://github.com/themk-ctrl" style=""><div tabindex="0" style="transform: none;"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm" style=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github h-3 w-3 sm:h-4 sm:w-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></button></div></a></div><div style="opacity: 1; transform: none;"><a target="_blank" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=maxsidorov06072011@gmail.com" style=""><div tabindex="0" style="transform: none;"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm" style=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-3 w-3 sm:h-4 sm:w-4"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></button></div></a></div><div style="opacity: 1; transform: none;"><a target="_blank" href="https://t.me/maxsidorov" style=""><div tabindex="0" style="transform: scale(1.00557);"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 text-xs sm:text-sm" style=""><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style=""><g id="SVGRepo_bgCarrier" stroke-width="0" style=""></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" style=""></g><g id="SVGRepo_iconCarrier" style=""> <path d="M41.4193 7.30899C41.4193 7.30899 45.3046 5.79399 44.9808 9.47328C44.8729 10.9883 43.9016 16.2908 43.1461 22.0262L40.5559 39.0159C40.5559 39.0159 40.3401 41.5048 38.3974 41.9377C36.4547 42.3705 33.5408 40.4227 33.0011 39.9898C32.5694 39.6652 24.9068 34.7955 22.2086 32.4148C21.4531 31.7655 20.5897 30.4669 22.3165 28.9519L33.6487 18.1305C34.9438 16.8319 36.2389 13.8019 30.8426 17.4812L15.7331 27.7616C15.7331 27.7616 14.0063 28.8437 10.7686 27.8698L3.75342 25.7055C3.75342 25.7055 1.16321 24.0823 5.58815 22.459C16.3807 17.3729 29.6555 12.1786 41.4193 7.30899Z" fill="#000000" style=""></path> </g></svg>
+</button></div></a></div></div></div><div class="flex justify-center h-48 md:h-auto" id="hero-icon-col" style="opacity: 1; transform: none;"><div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square" id="hero-icon-sq" style=""><div class="absolute inset-0 rounded-lg" style="transform: scale(1.00125) rotate(0.311827deg);"></div><div class="absolute inset-0 grid grid-cols-2 gap-2 sm:gap-4 p-2 sm:p-4" style=""><div class="bg-muted rounded-lg p-2 sm:p-4 flex items-center justify-center hover:bg-muted/80 transition-colors" tabindex="0" style="transform: none;"><div class="text-4xl text-[#087ea4]" style=""><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" fill="#000000" stroke="currentColor" height="1em" width="1em"><path d="M0 0h256v256H0V0z" fill="#F7DF1E"></path><path d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.087-21.996M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257 0-18.044 13.747-31.792 35.228-31.792 15.294 0 26.292 5.328 34.196 19.247L210.29 147.43c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.819-24.574"></path></svg></div></div><div class="bg-muted rounded-lg p-2 sm:p-4 flex items-center justify-center hover:bg-muted/80 transition-colors" style="transform: translateY(-0.101595px);"><div class="text-4xl" style=""><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" style="transform: scale(1.2);"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0164 2C10.8193 2 9.03825 3.72453 9.03825 5.85185V8.51852H15.9235V9.25926H5.97814C3.78107 9.25926 2 10.9838 2 13.1111L2 18.8889C2 21.0162 3.78107 22.7407 5.97814 22.7407H8.27322V19.4815C8.27322 17.3542 10.0543 15.6296 12.2514 15.6296H19.5956C21.4547 15.6296 22.9617 14.1704 22.9617 12.3704V5.85185C22.9617 3.72453 21.1807 2 18.9836 2H13.0164ZM12.0984 6.74074C12.8589 6.74074 13.4754 6.14378 13.4754 5.40741C13.4754 4.67103 12.8589 4.07407 12.0984 4.07407C11.3378 4.07407 10.7213 4.67103 10.7213 5.40741C10.7213 6.14378 11.3378 6.74074 12.0984 6.74074Z" fill="url(#paint0_linear_87_8204)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.9834 30C21.1805 30 22.9616 28.2755 22.9616 26.1482V23.4815L16.0763 23.4815L16.0763 22.7408L26.0217 22.7408C28.2188 22.7408 29.9998 21.0162 29.9998 18.8889V13.1111C29.9998 10.9838 28.2188 9.25928 26.0217 9.25928L23.7266 9.25928V12.5185C23.7266 14.6459 21.9455 16.3704 19.7485 16.3704L12.4042 16.3704C10.5451 16.3704 9.03809 17.8296 9.03809 19.6296L9.03809 26.1482C9.03809 28.2755 10.8192 30 13.0162 30H18.9834ZM19.9015 25.2593C19.1409 25.2593 18.5244 25.8562 18.5244 26.5926C18.5244 27.329 19.1409 27.9259 19.9015 27.9259C20.662 27.9259 21.2785 27.329 21.2785 26.5926C21.2785 25.8562 20.662 25.2593 19.9015 25.2593Z" fill="url(#paint1_linear_87_8204)"></path> <defs> <lineargradient id="paint0_linear_87_8204" x1="12.4809" y1="2" x2="12.4809" y2="22.7407" gradientUnits="userSpaceOnUse"> <stop stop-color="#327EBD"></stop> <stop offset="1" stop-color="#1565A7"></stop> </lineargradient> <lineargradient id="paint1_linear_87_8204" x1="19.519" y1="9.25928" x2="19.519" y2="30" gradientUnits="userSpaceOnUse"> <stop stop-color="#FFDA4B"></stop> <stop offset="1" stop-color="#F9C600"></stop> </lineargradient> </defs> </g></svg></div></div><div class="bg-muted rounded-lg p-2 sm:p-4 flex items-center justify-center hover:bg-muted/80 transition-colors" tabindex="0" style="transform: none;"><div class="text-4xl text-green-600" style="transform: translateY(-1.31206px);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"></path></svg></div></div><div class="bg-muted rounded-lg p-2 sm:p-4 flex items-center justify-center hover:bg-muted/80 transition-colors" tabindex="0" style="transform: scale(1.00011);"><div class="text-4xl text-sky-500" style=""><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" style="transform: scale(1.5);"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M27.6947 22.9999C27.883 22.6617 28 22.2807 28 21.9385V10.0613C28 9.71913 27.8831 9.33818 27.6947 9L16 16L27.6947 22.9999Z" fill="#7F3A86"></path> <path d="M17.0395 29.7433L26.9611 23.8047C27.2469 23.6336 27.5067 23.3382 27.695 23L16.0003 16L4.30566 23C4.49398 23.3382 4.75382 23.6337 5.03955 23.8047L14.9611 29.7433C15.5326 30.0855 16.468 30.0855 17.0395 29.7433Z" fill="#662579"></path> <path d="M27.6947 8.99996C27.5064 8.6617 27.2465 8.36629 26.9608 8.19521L17.0392 2.25662C16.4677 1.91446 15.5323 1.91446 14.9608 2.25662L5.03922 8.19521C4.46761 8.53729 4 9.37709 4 10.0613V21.9386C4 22.2807 4.11694 22.6618 4.30533 23L16 16L27.6947 8.99996Z" fill="#9A5196"></path> <path d="M16.0385 24C11.6061 24 8 20.4112 8 16C8 11.5888 11.6061 8 16.0385 8C18.8458 8 21.4674 9.47569 22.919 11.8618L19.4765 13.9265C18.7492 12.736 17.4399 12 16.0385 12C13.8222 12 12.0193 13.7944 12.0193 16C12.0193 18.2056 13.8222 20 16.0385 20C17.4362 20 18.7421 19.2681 19.4707 18.0832L22.9205 20.1359C21.4692 22.5234 18.8467 24 16.0385 24Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0001 13V13.9974H22.9999V13H22.0001V13.9974H21V15H22.0001V16.9948H21V18H22.0001V19H22.9999L23 18H25.0001V19H25.9999V18H27V17H25.9999V15H27V13.9974H25.9999V13H25.0001ZM25.0001 17V15H22.9999V16.9948L25.0001 17Z" fill="white"></path> </g></svg>
 </div></div></div><div class="absolute -top-3 sm:-top-5 -left-3 sm:-left-5 bg-background px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm shadow-md border" style="transform: translateY(-4.68058px) rotate(3.87473deg);">JavaScript
 </div><div class="absolute -bottom-3 sm:-bottom-5 -right-3 sm:-right-5 bg-background px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm shadow-md border" style="transform: translateY(2.40664px) rotate(-4.26626deg);">Веб-дизайн</div><div class="absolute -top-3 sm:-top-5 -right-3 sm:-right-5 bg-background px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm shadow-md border" style="transform: translateX(4.53522px) rotate(4.33807deg);">Python
 </div><div class="absolute -bottom-3 sm:-bottom-5 -left-3 sm:-left-5 bg-background px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm shadow-md border" style="transform: translateX(-1.55975px) rotate(-3.18605deg);">C#
