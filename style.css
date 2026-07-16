@@ -430,18 +430,42 @@ body {
 }
 
 /* Док (Dock) */
-/* Док (Dock) — позиционирование */
-/* Полностью замени старые .dock-container и .dock этим кодом */
+/* 1. Предотвращаем появление горизонтального скролла, который ломает центрирование */
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+/* 2. Жесткое и абсолютно надежное позиционирование дока по центру */
 .dock-container {
     position: fixed !important;
     bottom: 24px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    z-index: 1000 !important;
-    width: auto !important;
-    max-width: calc(100% - 32px) !important; /* Не дает доку выходить за края экрана */
-    box-sizing: border-box !important;
-    display: block !important;
+    /* Вместо left: 50% используем растягивание от края до края с авто-отступами */
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    
+    width: max-content !important; /* Док сжимается под контент */
+    max-width: calc(100% - 32px) !important; /* Не дает вылезать за рамки экрана */
+    z-index: 9999 !important;
+    
+    /* Сбрасываем старый transform, который мог конфликтовать */
+    transform: none !important; 
+}
+
+/* Стилизация самого дока */
+.dock {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    background: rgba(var(--bg-color), 0.85) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 8px 16px !important;
+    border-radius: 9999px !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
 }
 
 .dock {
@@ -1567,5 +1591,30 @@ body {
     .navbar-container {
         padding: 0 16px !important;
         justify-content: space-between !important;
+    }
+}
+
+/* ==========================================================================
+   🔎 ГЛОБАЛЬНОЕ МАСШТАБИРОВАНИЕ (Уменьшение элементов ниже Hero)
+   ========================================================================== */
+
+/* Масштабируем крупные секции контента ниже главного экрана */
+main > section:not(#hero) {
+    /* Уменьшаем масштаб на 7% (коэффициент 0.93). Можешь подставить 0.95 или 0.90 по вкусу */
+    transform: scale(0.93);
+    
+    /* Указываем точку начала масштабирования сверху по центру, чтобы не ломалась сетка */
+    transform-origin: top center;
+    
+    /* Компенсируем сжатие по высоте, чтобы секции не накладывались друг на друга */
+    margin-bottom: -5vh !important; 
+}
+
+/* На мобильных устройствах возвращаем масштаб ближе к оригинальному (0.96), 
+   чтобы текст оставался легко читаемым с телефона */
+@media (max-width: 768px) {
+    main > section:not(#hero) {
+        transform: scale(0.96);
+        margin-bottom: -2vh !important;
     }
 }
