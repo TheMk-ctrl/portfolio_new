@@ -431,40 +431,37 @@ body {
 
 /* Док (Dock) */
 /* Док (Dock) — позиционирование */
+/* Полностью замени старые .dock-container и .dock этим кодом */
 .dock-container {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    opacity: 1 !important;
-    transform-origin: center bottom;
-    
-    /* Защита от выезда за края экрана на очень маленьких устройствах */
-    width: 100%;
-    max-width: fit-content;
-    padding: 0 16px; 
-    box-sizing: border-box;
+    position: fixed !important;
+    bottom: 24px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1000 !important;
+    width: auto !important;
+    max-width: calc(100% - 32px) !important; /* Не дает доку выходить за края экрана */
+    box-sizing: border-box !important;
+    display: block !important;
 }
 
-/* Сам док — делаем его flex-контейнером с автоматическим распределением */
 .dock {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    background: rgba(var(--bg-color), 0.85);
-    border: 1px solid var(--border-color);
-    padding: 8px 16px;
-    border-radius: 9999px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    
-    /* Добавляем, чтобы док не сжимал элементы внутри */
-    flex-shrink: 0;
-    margin: 0 auto;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    background: rgba(var(--bg-color), 0.85) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 8px 16px !important;
+    border-radius: 9999px !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease !important;
+    margin: 0 auto !important;
 }
+
+/* Также удали или закомментируй строку в самом низу style.css:
+   .timeline-item, .project-card, .dock-container { opacity: 1 !important; ... }
+   Она ломает стандартное позиционирование! */
 
 /* Переопределение фона для дока */
 @media (prefers-color-scheme: dark) {
@@ -1553,4 +1550,22 @@ body {
     max-height: 800px;
     opacity: 1;
     border-left: 1px solid var(--border-color);
+}
+
+@media screen and (max-width: 768px) {
+    /* Скрываем текстовое имя разработчика, оставляем только аватарку */
+    .logo span {
+        display: none !important;
+    }
+
+    /* Полностью скрываем ссылки, чтобы освободить место */
+    .nav-links, .navbar nav {
+        display: none !important;
+    }
+
+    /* Выравниваем оставшиеся элементы */
+    .navbar-container {
+        padding: 0 16px !important;
+        justify-content: space-between !important;
+    }
 }
