@@ -430,18 +430,28 @@ body {
 }
 
 /* Док (Dock) */
+/* Док (Dock) — позиционирование */
 .dock-container {
     position: fixed;
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    opacity: 0;
+    opacity: 1 !important;
+    transform-origin: center bottom;
+    
+    /* Защита от выезда за края экрана на очень маленьких устройствах */
+    width: 100%;
+    max-width: fit-content;
+    padding: 0 16px; 
+    box-sizing: border-box;
 }
 
+/* Сам док — делаем его flex-контейнером с автоматическим распределением */
 .dock {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 16px;
     background: rgba(var(--bg-color), 0.85);
     border: 1px solid var(--border-color);
@@ -450,6 +460,10 @@ body {
     backdrop-filter: blur(20px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    
+    /* Добавляем, чтобы док не сжимал элементы внутри */
+    flex-shrink: 0;
+    margin: 0 auto;
 }
 
 /* Переопределение фона для дока */
@@ -1211,19 +1225,41 @@ body {
     transform: rotate(180deg);
 }
 
-/* Адаптивность для мобильных устройств */
+/* ==========================================================================
+   📱 АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (Менее 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .project-card-original {
-        grid-template-columns: 1fr !important;
+    /* Скрываем текстовое имя в логотипе, оставляем только аватарку */
+    .logo span {
+        display: none;
     }
-    .project-demo-right-collapsible {
-        border-left: none !important;
-        border-top: 1px solid #e2e8f0;
-        max-height: 0;
-        display: block;
+
+    /* На маленьких экранах скрываем навигационные ссылки в шапке, */
+    /* чтобы они не наезжали на кнопки */
+    .nav-links {
+        display: none;
     }
-    .project-card-original.demo-active .project-demo-right-collapsible {
-        max-height: 500px;
+
+    /* Уменьшаем отступы в шапке, чтобы кнопки влезли без проблем */
+    .navbar-container {
+        padding: 0 16px;
+    }
+
+    /* Делаем кнопку скачивания резюме чуть компактнее */
+    .resume-download-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/* На совсем крошечных экранах (менее 375px) */
+@media (max-width: 375px) {
+    .navbar-actions {
+        gap: 8px;
+    }
+    
+    .dock {
+        gap: 12px; /* Чуть сужаем расстояние между иконками в доке */
     }
 }
 
