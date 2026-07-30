@@ -200,3 +200,27 @@ function toggleProjectDemo(containerId, buttonElement) {
         }
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Удаляем активный класс у всех кнопок
+            tabBtns.forEach(b => b.classList.remove('active'));
+            // Добавляем кликнутой
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+});

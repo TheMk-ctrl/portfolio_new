@@ -40,6 +40,44 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+<style>
+        /* Стиль для переключения панелей проектов */
+        .projects-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .projects-tabs button {
+            background: #21262d;
+            border: 1px solid #30363d;
+            color: #8b949e;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .projects-tabs button.active {
+            background: #1f6feb;
+            color: #ffffff;
+            border-color: #1f6feb;
+        }
+        .projects-panel {
+            display: none;
+        }
+        .projects-panel.active {
+            display: block;
+        }
+        .mit-badge {
+            font-size: 0.75rem;
+            color: #3fb950;
+            border: 1px solid #238636;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            display: inline-block;
+        }
+    </style>
 <body>
 
     <div class="page-loader">
@@ -75,7 +113,7 @@
 
     <main class="container">
         <section id="about" class="hero-section">
-            <h1 class="hero-title" data-ru="Создаю решения, которые масштабируются." data-en="Building scalable software solutions.">Максим Сидоров</h1>
+            <h1 class="hero-title" data-ru="Создаю решения, готовые к завтрашнему дню." data-en="Building solutions ready for tomorrow.">Максим Сидоров</h1>
             <p class="hero-subtitle" data-ru="Fullstack-разработчик на JavaScript, Python и C#." data-en="Fullstack Developer working with JavaScript, Python, and C#.">Fullstack-разработчик на JavaScript, Python и C#.</p>
             <p class="hero-description" 
                data-ru="Проектирую архитектуру серверных систем, разрабатываю надежные API, создаю отзывчивые интерфейсы и десктопные приложения. Нацелен на чистоту кода и высокую производительность конечного продукта." 
@@ -145,95 +183,167 @@
 
         <!-- Проекты -->
         <section id="projects" class="projects-section">
-            <h2 class="section-title" data-ru="Мои Проекты" data-en="My Projects">Мои Проекты</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card-original">
-                    <div class="project-details-left">
-                        <span class="project-tag" data-ru="TELEGRAM БОТЫ" data-en="TELEGRAM BOTS">TELEGRAM БОТЫ</span>
-                        <h3 class="project-name">CrackVPN</h3>
-                        <p class="project-desc">Telegram-бот с оплатой через CryptoPay и Telegram Stars, серверами до 10 ГБ/с. Полностью автономен.</p>
-                        <div class="project-tech-tags">
-                            <span class="tag">Telegram API</span><span class="tag">MySQL</span><span class="tag">CryptoPay</span>
-                        </div>
-                        <a href="#" class="cert-link-btn" target="_blank" data-ru="Посмотреть" data-en="View">
-                            Посмотреть
-                        </a>
-                    </div>
-                </div>
+    <h2 class="section-title" data-ru="Мои Проекты" data-en="My Projects">Мои Проекты</h2>
+    
+    <!-- Переключатель вкладок -->
+    <div class="project-tabs">
+        <button class="tab-btn active" data-filter="all" data-ru="Все" data-en="All">Все</button>
+        <button class="tab-btn" data-filter="backend" data-ru="Backend" data-en="Backend">Backend</button>
+        <button class="tab-btn" data-filter="frontend" data-ru="Frontend" data-en="Frontend">Frontend</button>
+        <button class="tab-btn" data-filter="utilities" data-ru="Utilities" data-en="Utilities">Utilities</button>
+    </div>
 
-                <div class="project-card-original">
-                    <div class="project-details-left">
-                        <span class="project-tag" data-ru="СЕТЕВЫЕ ТЕХНОЛОГИИ" data-en="NETWORKING">СЕТЕВЫЕ ТЕХНОЛОГИИ</span>
-                        <h3 class="project-name" data-ru="P2P-децентрализованный мессенджер" data-en="P2P Decentralized Messenger">P2P-децентрализованный мессенджер</h3>
-                        <p class="project-desc">Обмен сообщениями со сквозным шифрованием, без центрального сервера. Офлайн-очередь сообщений.</p>
-                        <div class="project-tech-tags">
-                            <span class="tag">JavaScript</span><span class="tag">Cryptography</span><span class="tag">P2P</span>
-                        </div>
-                        <a href="#" class="cert-link-btn" target="_blank" data-ru="Посмотреть" data-en="View">
-                            Посмотреть
-                        </a>
-                    </div>
+    <div class="projects-grid">
+        
+        <!-- CrackVPN (Backend) -->
+        <div class="project-card" data-category="backend">
+            <div class="project-details-left">
+                <div class="project-card-header">
+                    <span class="project-category" data-ru="TELEGRAM БОТЫ & ФИНТЕХ" data-en="TELEGRAM BOTS & FINTECH">TELEGRAM БОТЫ & ФИНТЕХ</span>
                 </div>
-
-                <div class="project-card-original">
-                    <div class="project-details-left">
-                        <span class="project-tag" data-ru="БЭКЕНД И ИНТЕГРАЦИИ" data-en="BACKEND & INTEGRATIONS">БЭКЕНД И ИНТЕГРАЦИИ</span>
-                        <h3 class="project-name">Система обратной связи</h3>
-                        <p class="project-desc">Крупная система обратной связи в Telegram для поликлиники №4, проект успешно запущен и собрал 2000+ отзывов.</p>
-                        <div class="project-tech-tags">
-                            <span class="tag">aiogram v3.x</span><span class="tag">Python</span><span class="tag">MySQL</span>
-                        </div>
-                        <a href="#" class="cert-link-btn" target="_blank" data-ru="Посмотреть" data-en="View">
-                            Посмотреть
-                        </a>
-                    </div>
+                <h3 class="project-title">CrackVPN</h3>
+                <p class="project-description" data-ru="Красиво оформленный Telegram-бот с интегрированной системой оплаты CryptoPay и Telegram Stars, серверами со скоростью до 10 Гбит/с и полной автономностью работы." data-en="Beautifully styled Telegram bot with integrated CryptoPay and Telegram Stars payment systems, servers operating at up to 10 Gbps, and full autonomy.">
+                    Красиво оформленный Telegram-бот с интегрированной системой оплаты CryptoPay и Telegram Stars, серверами со скоростью до 10 Гбит/с и полной автономностью работы.
+                </p>
+                <div class="project-tech-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Telegram API</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">CryptoPay</span>
                 </div>
-
-                <div class="project-card-original">
-                    <div class="project-details-left">
-                        <span class="project-tag" data-ru="УТИЛИТЫ И МОНИТОРИНГ" data-en="UTILITIES & MONITORING">УТИЛИТЫ И МОНИТОРИНГ</span>
-                        <h3 class="project-name">Управление майнером</h3>
-                        <p class="project-desc">Telegram-бот для удаленного мониторинга и управления майнерами XMRig в реальном времени.</p>
-                        <div class="project-tech-tags">
-                            <span class="tag">Python</span><span class="tag">XMRig API</span>
-                        </div>
-                        <a href="#" class="cert-link-btn" target="_blank" data-ru="Посмотреть" data-en="View">
-                            Посмотреть
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card-original">
-                    <div class="project-details-left">
-                        <span class="project-tag" data-ru="БЛОКЧЕЙН" data-en="BLOCKCHAIN">БЛОКЧЕЙН</span>
-                        <h3 class="project-name">Локальный блокчейн</h3>
-                        <p class="project-desc">Локальная реализация блокчейн-цепи с механизмами транзакций, хеширования блоков и консенсуса.</p>
-                        <div class="project-tech-tags">
-                            <span class="tag">Python</span><span class="tag">SHA-256</span>
-                        </div>
-                        <a href="#" class="cert-link-btn" target="_blank" data-ru="Посмотреть" data-en="View">
-                            Посмотреть
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card-original">
-                    <div class="project-details-left">
-                        <span class="project-tag" data-ru="ИГРОВАЯ РАЗРАБОТКА" data-en="GAME DEV">ИГРОВАЯ РАЗРАБОТКА</span>
-                        <h3 class="project-name">Madness (Tower Defence)</h3>
-                        <p class="project-desc">Инди-игра на Unity (C#) с ООП структурой, ИИ-агентами, адаптивным дизайном и совместимостью с веб-хостингами.</p>
-                        <div class="project-tech-tags">
-                            <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">OOP</span>
-                        </div>
-                        <a href="#" class="cert-link-btn" target="_blank" data-ru="Посмотреть" data-en="View">
-                            Посмотреть
-                        </a>
-                    </div>
-                </div>
-
             </div>
-        </section>
+        </div>
+
+        <!-- Nopeer.pw — P2P Messenger (Frontend) -->
+        <div class="project-card" data-category="frontend">
+            <div class="project-details-left">
+                <div class="project-card-header">
+                    <span class="project-category" data-ru="СЕТИ И БЕЗОПАСНОСТЬ" data-en="NETWORKING & SECURITY">СЕТИ И БЕЗОПАСНОСТЬ</span>
+                    <span class="mit-badge">MIT License</span>
+                </div>
+                <h3 class="project-title">Nopeer.pw — P2P Messenger</h3>
+                <p class="project-description" data-ru="Децентрализованная платформа для обмена сообщениями, обеспечивающая прямое P2P-взаимодействие пользователей со сквозным шифрованием (E2EE) без участия централизованных серверов." data-en="A decentralized P2P messaging platform providing direct end-to-end encrypted user interactions without central server dependency.">
+                    Децентрализованная платформа для обмена сообщениями, обеспечивающая прямое P2P-взаимодействие пользователей со сквозным шифрованием (E2EE) без участия централизованных серверов.
+                </p>
+                <div class="project-tech-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">WebRTC</span>
+                    <span class="tag">Web Crypto API</span>
+                    <span class="tag">P2P</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/TheMk-ctrl/P2P-Messanger" target="_blank" class="resume-download-btn" data-ru="Посмотреть код" data-en="View Code">Посмотреть код</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Система обратной связи ВГКП №4 (Backend) -->
+        <div class="project-card" data-category="backend">
+            <div class="project-details-left">
+                <div class="project-card-header">
+                    <span class="project-category" data-ru="БЭКЕНД И ИНТЕГРАЦИИ" data-en="BACKEND & INTEGRATIONS">БЭКЕНД И ИНТЕГРАЦИИ</span>
+                </div>
+                <h3 class="project-title" data-ru="Система обратной связи (ВГКП №4)" data-en="Feedback System (Clinic #4)">Система обратной связи (ВГКП №4)</h3>
+                <p class="project-description" data-ru="Крупная корпоративная система обратной связи на Python в экосистеме Telegram для организации со штатом более 1500 сотрудников. Проект успешно запущен и обработал 2000+ отзывов." data-en="Large-scale Telegram feedback system in Python developed for an organization with 1,500+ employees. Successfully launched with 2,000+ reviews handled.">
+                    Крупная корпоративная система обратной связи на Python в экосистеме Telegram для организации со штатом более 1500 сотрудников. Проект успешно запущен и обработал 2000+ отзывов.
+                </p>
+                <div class="project-tech-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">aiogram v3.x</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">REST API</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Go Site Monitor (Utilities) -->
+        <div class="project-card" data-category="utilities">
+            <div class="project-details-left">
+                <div class="project-card-header">
+                    <span class="project-category" data-ru="УТИЛИТЫ И МОНИТОРИНГ" data-en="UTILITIES & MONITORING">УТИЛИТЫ И МОНИТОРИНГ</span>
+                    <span class="mit-badge">MIT License</span>
+                </div>
+                <h3 class="project-title">Go Site Monitor</h3>
+                <p class="project-description" data-ru="Высокопроизводительный микросервис на языке Go для регулярной проверки доступности сайтов, отслеживания HTTP-статусов и времени отклика в реальном времени." data-en="High-performance Go microservice for real-time uptime monitoring, checking HTTP statuses, and tracking response times.">
+                    Высокопроизводительный микросервис на языке Go для регулярной проверки доступности сайтов, отслеживания HTTP-статусов и времени отклика в реальном времени.
+                </p>
+                <div class="project-tech-tags">
+                    <span class="tag">Go (Golang)</span>
+                    <span class="tag">HTTP Client</span>
+                    <span class="tag">Concurrency</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/TheMk-ctrl/go-site-monitor" target="_blank" class="resume-download-btn" data-ru="Посмотреть код" data-en="View Code">Посмотреть код</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Локальный блокчейн (Backend) -->
+        <div class="project-card" data-category="backend">
+            <div class="project-details-left">
+                <div class="project-card-header">
+                    <span class="project-category" data-ru="БЛОКЧЕЙН" data-en="BLOCKCHAIN">БЛОКЧЕЙН</span>
+                    <span class="mit-badge">MIT License</span>
+                </div>
+                <h3 class="project-title" data-ru="Локальный блокчейн" data-en="Local Blockchain">Локальный блокчейн</h3>
+                <p class="project-description" data-ru="Локальная реализация блокчейн-цепи на Python с поддержкой майнинга, SHA-256 хеширования блоков, созданием кошельков и распределенным сетевым API на FastAPI." data-en="Local Python blockchain implementation featuring block mining, SHA-256 hashing, wallet creation, and a distributed API via FastAPI.">
+                    Локальная реализация блокчейн-цепи на Python с поддержкой майнинга, SHA-256 хеширования блоков, созданием кошельков и распределенным сетевым API на FastAPI.
+                </p>
+                <div class="project-tech-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">SHA-256</span>
+                    <span class="tag">Cryptography</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/TheMk-ctrl/Blockchain-POW" target="_blank" class="resume-download-btn" data-ru="Посмотреть код" data-en="View Code">Посмотреть код</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Webscan (Utilities) -->
+        <div class="project-card" data-category="frontend">
+            <div class="project-details-left">
+                <div class="project-card-header">
+                    <span class="project-category" data-ru="АВТОМАТИЗАЦИЯ" data-en="AUTOMATION">АВТОМАТИЗАЦИЯ</span>
+                    <span class="mit-badge">MIT License</span>
+                </div>
+                <h3 class="project-title">Webscan</h3>
+                <p class="project-description" data-ru="Инструмент для комплексного технического аудита и анализа безопасности веб-приложений. Проверяет заголовки HTTP, наличие утечек, параметры SEO-оптимизации, задержку сети (Latency) и автоматически генерирует исполнительное резюме с помощью встроенного ИИ-агента." data-en="A tool for comprehensive technical audit and security analysis of web applications. Checks HTTP headers, leaks, SEO optimization parameters, network latency (Latency), and automatically generates an executive summary using the built-in AI agent.">
+                    Инструмент для комплексного технического аудита и анализа безопасности веб-приложений. Проверяет заголовки HTTP, наличие утечек, параметры SEO-оптимизации, задержку сети (Latency) и автоматически генерирует исполнительное резюме с помощью встроенного ИИ-агента.
+                </p>
+                <div class="project-tech-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">CSP</span>
+                    <span class="tag">HSTS</span> 
+                    <span class="tag">Referrer-Policy</span> 
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/TheMk-ctrl/Webscan" target="_blank" class="resume-download-btn" data-ru="Посмотреть код" data-en="View Code">Посмотреть код</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Управление майнером XMRig (Utilities) -->
+        <div class="project-card" data-category="utilities">
+            <div class="project-details-left">
+                <div class="project-card-header">
+                    <span class="project-category" data-ru="МОНИТОРИНГ И УПРАВЛЕНИЕ" data-en="MONITORING & CONTROL">МОНИТОРИНГ И УПРАВЛЕНИЕ</span>
+                </div>
+                <h3 class="project-title" data-ru="Управление майнером XMRig" data-en="XMRig Miner Manager">Управление майнером XMRig</h3>
+                <p class="project-description" data-ru="Telegram-бот для удаленного мониторинга, управления конфигурациями и получения уведомлений от майнеров XMRig в реальном времени через API." data-en="Telegram bot for remote monitoring, configuration control, and real-time alerts for XMRig miners via API.">
+                    Telegram-бот для удаленного мониторинга, управления конфигурациями и получения уведомлений от майнеров XMRig в реальном времени через API.
+                </p>
+                <div class="project-tech-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">XMRig API</span>
+                    <span class="tag">Telegram API</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
         <section id="certificates" class="certificates-section">
             <h2 class="section-title" data-ru="Сертификаты и образование" data-en="Certificates & Education">Сертификаты и образование</h2>

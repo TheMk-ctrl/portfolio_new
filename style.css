@@ -1618,3 +1618,52 @@ main > section:not(#hero) {
         margin-bottom: -2vh !important;
     }
 }
+
+/* Фильтр вкладок */
+.project-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #4b5563;
+}
+
+.tab-btn:hover {
+    border-color: #111827;
+    color: #111827;
+}
+
+.tab-btn.active {
+    background: #111827;
+    color: #ffffff;
+    border-color: #111827;
+}
+
+/* Скрытие карточек при фильтрации */
+.project-card.hidden {
+    display: none !important;
+}
+
+/* Контейнер карточек: горизонтальный скролл */
+.projects-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 16px; /* Зазор для скроллбара */
+    -webkit-overflow-scrolling: touch; /* Плавность на iOS */
+}
